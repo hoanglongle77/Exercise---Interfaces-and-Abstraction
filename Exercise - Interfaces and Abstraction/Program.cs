@@ -2,10 +2,13 @@
 
 
 using Exercise___Interfaces_and_Abstraction.Problem_1___2;
+using Exercise___Interfaces_and_Abstraction.Problem_3;
 
-TestProblem2();
+using System.Numerics;
 
-static void TestProblem1()
+TestProblem3();
+
+/*static void TestProblem1()
 {
     Console.Write("Enter citizen's name: ");
     string name = Console.ReadLine();
@@ -14,7 +17,7 @@ static void TestProblem1()
     IPerson person = new Citizen(name, age);
     Console.WriteLine(person.Name);
     Console.WriteLine(person.Age);
-}
+}*/
 
 static void TestProblem2()
 {
@@ -31,4 +34,23 @@ static void TestProblem2()
     Console.WriteLine(identifiable.Id);
     Console.WriteLine(birthdate1.Birthdate);
 
+}
+
+static void TestProblem3()
+{
+    SmartPhone myPhone = new SmartPhone("IPhone X");
+
+    var numbersToCall = Console.ReadLine().Split();
+
+    foreach (var number in numbersToCall)
+    {
+        Console.WriteLine(myPhone.Call(number));
+    }
+
+    var sitesToBrowse = Console.ReadLine().Split();
+
+    foreach (var site in sitesToBrowse)
+    {
+        Console.WriteLine(myPhone.Browse(site));
+    }
 }
